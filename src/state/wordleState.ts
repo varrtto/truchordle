@@ -7,6 +7,8 @@ type State = {
   word: string;
   attempts: string[][];
   attemptNumber: number;
+  showWord: boolean;
+  setShowWord: (value: boolean) => void;
   resetGame: () => void;
   increaseAttemptNumber: () => void;
   setWord: (newWord: string) => void;
@@ -22,10 +24,14 @@ export const wordleState = create<State>((set) => ({
   victory: false,
   attempts: [[], [], [], [], []],
   attemptNumber: 0,
+  showWord: false,
+  setShowWord: () => set({ showWord: true }),
   resetGame: () =>
     set({
       word: selectRandomWord(),
       gameOver: false,
+      victory: false,
+      showWord: false,
       attempts: [[], [], [], [], []],
       attemptNumber: 0,
     }),

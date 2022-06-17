@@ -11,13 +11,18 @@ const Keyboard = () => {
     increaseAttemptNumber,
     setGameOver,
     setVictory,
+    setShowWord,
   } = wordleState();
 
   const handleValidation = () => {
     if (attempts[attemptNumber].join("") === word) {
       setVictory(true);
+      setShowWord(true);
     } else {
-      if (attemptNumber === 4) setGameOver(true);
+      if (attemptNumber === 4) {
+        setGameOver(true);
+        setShowWord(true);
+      }
     }
     increaseAttemptNumber();
   };

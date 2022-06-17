@@ -7,7 +7,7 @@ import GameOverButton from "./components/GameOverButton";
 import VictoryModal from "./components/VictoryModal";
 
 const App = () => {
-  const { word, gameOver, victory } = wordleState();
+  const { word, gameOver, victory, showWord } = wordleState();
 
   return (
     <div className="App">
@@ -15,7 +15,7 @@ const App = () => {
       {victory && <VictoryModal />}
       <div className="container is-fluid">
         <h1 className="title is-1 py-2">Wordle</h1>
-        <h2>{word}</h2>
+        {showWord && <h2>{word}</h2>}
         <AttemptsDisplay />
         <Keyboard />
         <GameOverButton />
