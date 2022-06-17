@@ -1,0 +1,17 @@
+.box:last-child { margin-bottom: 1.5rem; }
+.box {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 1vw;
+}
+
+.green {
+    background-color: greenyellow;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.yellow {
+    background-color: yellow;
+}
