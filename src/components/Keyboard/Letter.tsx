@@ -5,6 +5,8 @@ import styles from "./Letter.module.css";
 interface Props {
   letter: string;
   onClick: (char: string) => void | (() => void);
+  isEnter?: boolean;
+  isDelete?: boolean;
 }
 
 const Letter = (props: Props) => {
