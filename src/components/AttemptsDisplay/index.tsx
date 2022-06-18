@@ -2,7 +2,7 @@ import AttemptDisplay from "./AttemptDisplay";
 
 const AttemptsDisplay = () => {
   return (
-    <div className="container is-flex is-flex-direction-column">
+    <div className="container is-fluid is-flex is-flex-direction-column mb-5">
       <AttemptDisplay line={0} />
       <AttemptDisplay line={1} />
       <AttemptDisplay line={2} />

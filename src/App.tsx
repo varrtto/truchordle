@@ -14,7 +14,7 @@ const App = () => {
       {gameOver && <GameOverModal />}
       {victory && <VictoryModal />}
       <div className="container is-fluid">
-        <h1 className="title is-1 py-2">Wordle</h1>
+        <h1 className="title is-1 py-2">Truchordle</h1>
         {showWord && <h2>{word}</h2>}
         <AttemptsDisplay />
         <Keyboard />

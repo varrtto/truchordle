@@ -1,32 +1,49 @@
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { wordleState } from "../../state/wordleState";
 import styles from "./AttemptLetter.module.css";
 
 interface Props {
   letter: string;
+  line: number;
 }
 
 const AttemptLetter = (props: Props) => {
-  const { letter } = props;
+  const { letter, line } = props;
   const { attempts, attemptNumber, word } = wordleState();
+  const [letterStatus, setLetterStatus] = useState("white");
 
-  const status = useMemo(() => {
-    if (attemptNumber > 0) {
-      for (let i = 0; i < attemptNumber; i++) {
-        if (
-          word.includes(letter) &&
-          word.indexOf(letter) === attempts[i].indexOf(letter)
-        )
-          return "green";
-        if (word.includes(letter) && attempts[i].includes(letter))
-          return "yellow";
-        if (attempts[i].includes(letter)) return "grey";
+  useEffect(() => {
+    if (attemptNumber > 0 && line === attemptNumber - 1) {
+      if (
+        (word.includes(letter) &&
+          word.indexOf(letter) ===
+            attempts[attemptNumber - 1].indexOf(letter)) ||
+        letterStatus === "green"
+      ) {
+        setLetterStatus("green");
+      } else if (
+        (word.includes(letter) &&
+          attempts[attemptNumber - 1].includes(letter)) ||
+        letterStatus === "yellow"
+      ) {
+        setLetterStatus("yellow");
+      } else if (attempts[attemptNumber - 1].includes(letter)) {
+        setLetterStatus("grey");
       }
     }
-    return "white";
-  }, [attemptNumber, word, attempts]);
+  }, [attemptNumber]);
 
-  return <div className={`button mx-2 my-2 ${styles[status]}`}>{letter}</div>;
+  useEffect(() => {
+    setLetterStatus("white");
+  }, [word]);
+
+  return (
+    <div
+      className={`button mx-2 my-2 ${styles.letter} ${styles[letterStatus]}`}
+    >
+      {letter}
+    </div>
+  );
 };
 
 export default AttemptLetter;
