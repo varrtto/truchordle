@@ -74,7 +74,7 @@ const Keyboard = () => {
         <Letter letter="Ñ" onClick={onClick} />
       </div>
       <div className="columns is-mobile">
-        <Letter letter="✅" onClick={onEnter} />
+        <Letter letter="↵" onClick={onEnter} isEnter />
         <Letter letter="Z" onClick={onClick} />
         <Letter letter="X" onClick={onClick} />
         <Letter letter="C" onClick={onClick} />
@@ -82,7 +82,7 @@ const Keyboard = () => {
         <Letter letter="B" onClick={onClick} />
         <Letter letter="N" onClick={onClick} />
         <Letter letter="M" onClick={onClick} />
-        <Letter letter="⏪" onClick={onDelete} />
+        <Letter letter="⌫" onClick={onDelete} isDelete />
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ interface Props {
 const Letter = (props: Props) => {
   const { word, attempts, attemptNumber, victory, gameOver } = wordleState();
   const [letterStatus, setLetterStatus] = useState("white");
-  const { letter, onClick } = props;
+  const { letter, onClick, isEnter, isDelete } = props;
 
   useEffect(() => {
     if (attemptNumber > 0) {
@@ -39,7 +39,9 @@ const Letter = (props: Props) => {
 
   return (
     <button
-      className={`column button mx-1 px-2 py-2 ${styles.box} ${styles[letterStatus]}`}
+      className={`column button mx-1 px-2 py-2 ${styles.box} ${
+        styles[letterStatus]
+      } ${isEnter && "is-success"} ${isDelete && "is-danger"}`}
       onClick={() => onClick(letter)}
       disabled={victory || gameOver}
     >

@@ -3,7 +3,7 @@ import "./App.css";
 import Keyboard from "./components/Keyboard";
 import GameOverModal from "./components/GameOverModal";
 import AttemptsDisplay from "./components/AttemptsDisplay";
-import GameOverButton from "./components/GameOverButton";
+import RestartButton from "./components/RestartButton";
 import VictoryModal from "./components/VictoryModal";
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
         {showWord && <h2>{word}</h2>}
         <AttemptsDisplay />
         <Keyboard />
-        <GameOverButton />
+        <RestartButton />
       </div>
     </div>
   );

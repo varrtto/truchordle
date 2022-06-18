@@ -1,12 +1,12 @@
 import { wordleState } from "../../state/wordleState";
 
-const GameOverButton = () => {
+const RestartButton = () => {
   const { resetGame } = wordleState();
   return (
     <div className="button" onClick={resetGame}>
-      REINICIAR
+      Dame otra palabra!
     </div>
   );
 };
 
-export default GameOverButton;
+export default RestartButton;
