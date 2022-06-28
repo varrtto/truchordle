@@ -7,6 +7,8 @@ import RestartButton from "./components/RestartButton";
 import VictoryModal from "./components/VictoryModal";
 import Navbar from "./components/Navbar";
 
+import styles from "./App.module.css";
+
 const App = () => {
   const { word, gameOver, victory, showWord } = wordleState();
 
@@ -15,7 +17,9 @@ const App = () => {
       {gameOver && <GameOverModal />}
       {victory && <VictoryModal />}
       <Navbar />
-      <div className="container is-fluid">
+      <div
+        className={`container is-fluid ${styles.main} is-flex is-flex-direction-column is-align-content-space-evenly py-3`}
+      >
         <h1 className="title is-1 py-2">Truchordle</h1>
         {showWord && <h2>{word}</h2>}
         <AttemptsDisplay />

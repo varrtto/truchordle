@@ -1,11 +1,12 @@
 import { wordleState } from "../../state/wordleState";
+import styles from "./RestartButton.module.css";
 
 const RestartButton = () => {
   const { resetGame } = wordleState();
   return (
-    <div className="button" onClick={resetGame}>
+    <button className={`button ${styles.main}`} onClick={resetGame}>
       Dame otra palabra!
-    </div>
+    </button>
   );
 };
 

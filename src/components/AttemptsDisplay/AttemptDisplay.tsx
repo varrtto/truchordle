@@ -17,11 +17,11 @@ const AttemptDisplay = (props: Props) => {
 
   return (
     <div className="container is-flex is-flex-direction-row is-justify-content-space-between">
-      <AttemptLetter letter={letter1} line={line} />
-      <AttemptLetter letter={letter2} line={line} />
-      <AttemptLetter letter={letter3} line={line} />
-      <AttemptLetter letter={letter4} line={line} />
-      <AttemptLetter letter={letter5} line={line} />
+      <AttemptLetter letter={letter1} line={line} position={0} />
+      <AttemptLetter letter={letter2} line={line} position={1} />
+      <AttemptLetter letter={letter3} line={line} position={2} />
+      <AttemptLetter letter={letter4} line={line} position={3} />
+      <AttemptLetter letter={letter5} line={line} position={4} />
     </div>
   );
 };

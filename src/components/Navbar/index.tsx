@@ -1,20 +1,17 @@
 import { wordleState } from "../../state/wordleState";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const { gameType, setGameType } = wordleState();
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img
-            src="https://bulma.io/images/bulma-logo.png"
-            width="112"
-            height="28"
-          />
+        <a className={`navbar-item ${styles.main}`} href="/">
+          TRUCHORDLE
         </a>
         <a
           role="button"
-          className="navbar-burger"
+          className="navbar-burger mr-0 ml-auto"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"

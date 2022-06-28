@@ -5,10 +5,11 @@ import styles from "./AttemptLetter.module.css";
 interface Props {
   letter: string;
   line: number;
+  position: number;
 }
 
 const AttemptLetter = (props: Props) => {
-  const { letter, line } = props;
+  const { letter, line, position } = props;
   const { attempts, attemptNumber, word } = wordleState();
   const [letterStatus, setLetterStatus] = useState("white");
 
@@ -16,8 +17,7 @@ const AttemptLetter = (props: Props) => {
     if (attemptNumber > 0 && line === attemptNumber - 1) {
       if (
         (word.includes(letter) &&
-          word.indexOf(letter) ===
-            attempts[attemptNumber - 1].indexOf(letter)) ||
+          word[position] === attempts[attemptNumber - 1][position]) ||
         letterStatus === "green"
       ) {
         setLetterStatus("green");
