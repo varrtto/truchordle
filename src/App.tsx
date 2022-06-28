@@ -21,10 +21,10 @@ const App = () => {
         className={`container is-fluid ${styles.main} is-flex is-flex-direction-column is-align-content-space-evenly py-3`}
       >
         <h1 className="title is-1 py-2">Truchordle</h1>
-        {showWord && <h2>{word}</h2>}
         <AttemptsDisplay />
+        {showWord && <h2 className="pb-2">La palabra era: {word}</h2>}
+        {showWord && <RestartButton />}
         <Keyboard />
-        <RestartButton />
       </div>
     </div>
   );
